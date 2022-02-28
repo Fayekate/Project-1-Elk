@@ -37,7 +37,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name          | Function |            | IP Address | Operating System |
+| Name          | Function |           IP Address    | Operating System |
 |---------------|----------|-------------------------|------------------|
 | Jump Box      | Gateway  | 10.0.0.7/20.106.101.91  | Linux            |
 | Web-1         | WebServer|  10.0.0.8               | Linux            |                 
@@ -58,11 +58,11 @@ Machines within the network can only be accessed by Workstation and Jump-Box-Pro
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name     | Publicly Accessible | Allowed IP Addresses               |
+|----------|---------------------|------------------------------------|
+| Jump Box |     No              | Workstation public IP on ssh 22    |
+|  Web1    |     No              |                      |
+|  Web2    |     No              |                      |
 
 ### Elk Configuration
 
