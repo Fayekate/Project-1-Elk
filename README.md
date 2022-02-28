@@ -86,8 +86,8 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
--Web1:10.0.0.8
--Web2:10.0.0.9
+- Web1:10.0.0.8
+- Web2:10.0.0.9
 We have installed the following Beats on these machines:
 - ELK Server, Web1 and Web2
 - The ELK Stack Installed are: FileBeat and MetricBeat
@@ -100,13 +100,22 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy [] [elk-Playbook.yml](https://github.com/Fayekate/Project-1-Elk/blob/main/Ansible/ansible/elk-Playbook.yml)
+- Run the playbook using this command : ansible-playbook install-elk.yml
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+For FILEBEAT:
+- Download Filebeat playbook usng this command:
+- curl -L -O https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
+- Copy the '/etc/ansible/files/filebeat-config.yml' file to '/etc/filebeat/filebeat-playbook.yml'
+- Update the filebeat-playbook.yml file to include installer
+ - curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb 
+ - Update the filebeat-config.yml file root@c1e0a059c0b0:/etc/ansible/files# nano filebeat-config.yml
+
+
+Answer the following questions to fill in the blanks:_
+- Which file is the playbook? Where do you copy it?For the ANSIBLE : We will create the my-playbook1.yml as our playbook.For FILEBEAT: We will create filbeat-playbook.yml as our playbook.For METRICBEAT: We will create metricbeat-playbook.yml as our playbook.
+- Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- _Which URL do you navigate to in order to check that the ELK server is running?Test Kibana on web : http://[your.ELK-VM.External.IP]:5601/app/kibana
+Test Kibana on localhost: sysadmin@10.1.0.4: curl localhost:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
