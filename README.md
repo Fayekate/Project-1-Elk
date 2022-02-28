@@ -71,26 +71,14 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Specify a different group of machines as well as a different remote user
-  - name: Config elk VM with Docker
-    hosts: elk
-    remote_user: asureuser
-    become: true
-    tasks:
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/Remoteuser-scshots.JPG)  
 - Increase System Memory :
-  - name: Use more memory
-    sysctl:
-    name: vm.max_map_count
-    value: '262144'
-    state: present
-    reload: yes
-  - Install the following services:
-   `docker.io`
-   `python3-pip`
-   `docker`, which is the Docker Python pip module. 
-  - Launching and Exposing the container with these published ports:
- `5601:5601` 
- `9200:9200`
- `5044:5044` 
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/systemmemory-screenshots.JPG) 
+- Install the following services:
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/dockerio-scshot.JPG)
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/pip3-scshot.JPG)
+- Launching and Exposing the container with these published ports:
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/ports-scshot.JPG)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
