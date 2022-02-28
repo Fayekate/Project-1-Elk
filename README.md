@@ -33,9 +33,7 @@ Load balancing ensures that the application will be highly available, in additio
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 -What does Filebeat watch for? Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
 -What does Metricbeat record? Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
-
-The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+The configuration details of each machine may be found below. 
 
 | Name          | Function |           IP Address    | Operating System |
 |---------------|----------|-------------------------|------------------|
@@ -58,11 +56,13 @@ Machines within the network can only be accessed by Workstation and Jump-Box-Pro
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses               |
-|----------|---------------------|------------------------------------|
-| Jump Box |     No              | Workstation public IP on ssh 22    |
-|  Web1    |     No              |                      |
-|  Web2    |     No              |                      |
+| Name        | Publicly Accessible | Allowed IP Addresses               |
+|-------------|---------------------|------------------------------------|
+| Jump Box    |     No              | Workstation public IP on ssh 22    |
+|  Web1       |     No              | 10.0.0.4 on ssh 22                 |
+|  Web2       |     No              | 10.0.0.4 on ssh 22                 |
+|Elk server   |     No              |Workstation Public IP usingTCP 5601 |
+|Loadbalancer	|     No             	|Workstation Public IP on HTTP 80    |
 
 ### Elk Configuration
 
