@@ -15,46 +15,55 @@ These files have been tested and used to generate a live ELK deployment on Azure
   
 
 This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
+- [Description of the Topology](https://github.com/Fayekate/Project-1-Elk/edit/main/README.md#description-of-the-topology)
+- [Access Policies](https://github.com/Fayekate/Project-1-Elk/edit/main/README.md#access-policies)
+- [ELK Configuration](https://github.com/Fayekate/Project-1-Elk/edit/main/README.md#elk-configuration)
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
-
+----
 
 ### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting volnerable to the network.
--What aspect of security do load balancers protect? Availability, Web Traffic, Web Security
--What is the advantage of a jump box?Automation, Security, Network Segmentation, Access Control
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
--What does Filebeat watch for? Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
--What does Metricbeat record? Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.
-The configuration details of each machine may be found below. 
+Load balancing ensures that the application will be highly available, in addition to restricting vulnerablities to the network.
+
+- What aspect of security do load balancers protect? 
+  - **Availability, Web Traffic, Web Security**
+  
+- What is the advantage of a jump box?
+  - **Automation, Security, Network Segmentation, Access Control**
+  - **Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.**
+  
+- What does Filebeat watch for? 
+  - **Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.**
+  
+- What does Metricbeat record? 
+  - **Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash.**
+  
+### The configuration details of each machine may be found below. 
 
 | Name          | Function |           IP Address    | Operating System |
 |---------------|----------|-------------------------|------------------|
 | Jump Box      | Gateway  | 10.0.0.7/20.106.101.91  | Linux            |
 | Web-1         | WebServer|  10.0.0.8               | Linux            |                 
 | Web-2         | WebServer| 10.0.0.9                | Linux            |                
-| Elk           |ELK SErver| 10.1.0.4/20.106.101.91  | Linux            |                
+| Elk           |ELK Server| 10.1.0.4/20.106.101.91  | Linux            |                
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Elk Server machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
--Workstation Public IP through TCP 5601.
 
-Machines within the network can only be accessed by Workstation and Jump-Box-Provisioner. 
--Which machine did you allow to access your ELK VM? What was its IP address?
--Jump-Box-Provisioner IP : 10.0.0.7 via SSH port 22
--Workstation Public IP via port TCP 5601
+- **Workstation(s) Public IP through TCP 5601 & HTTP Port 80.**
+- **Machines within the network can only be accessed by Workstation and Jump-Box-Provisioner.**
 
-A summary of the access policies in place can be found in the table below.
+Which machine did you allow to access your ELK VM? What was its IP address?
+- **Jump-Box-Provisioner IP : 10.0.0.7 via SSH port 22**
+
+### A summary of the access policies in place can be found in the table below.
 
 | Name        | Publicly Accessible | Allowed IP Addresses               |
 |-------------|---------------------|------------------------------------|
@@ -64,21 +73,41 @@ A summary of the access policies in place can be found in the table below.
 |Elk server   |     No              |Workstation Public IP usingTCP 5601 |
 |Loadbalancer	|     No             	|Workstation Public IP on HTTP 80    |
 
+----
+
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows for automation and efficiency which can allow for better security posture due to all hosts receiving the same configuration. 
 
-The playbook implements the following tasks:
+- What is the main advantage of automating configuration with Ansible?
+ - The main advantage of ansible is the power to automate, which allows for more time saved and productivity, eliminate repetitive tasks, fewer mistakes and erorrs.
+
+#### The playbook implements the following tasks:
+
 - Specify a different group of machines as well as a different remote user
-![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/Remoteuser-scshots.JPG)  
+
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/Remoteuser-scshots.JPG) 
+
+----
+
 - Increase System Memory :
-![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/systemmemory-screenshots.JPG) 
+
+![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/systemmemory-screenshots.JPG)
+
+----
+
 - Install the following services:
+
 ![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/dockerio-scshot.JPG)
 ![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/pip3-scshot.JPG)
+
+----
+
 - Launching and Exposing the container with these published ports:
+
 ![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/ports-scshot.JPG)
+
+----
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
