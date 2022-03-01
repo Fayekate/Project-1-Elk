@@ -154,8 +154,30 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 ```curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb Update the **filebeat-config.yml** file root@c1e0a059c0b0:/etc/ansible/files# nano filebeat-config.yml```
 
+4. Update the filebeat-config.yml file root@3b8de46c18d0:/etc/ansible/files# 
+- **nano filebeat-config.yml**
+
+output.elasticsearch:
+ ![](https://github.com/Fayekate/Project-1-Elk/blob/main/Screenshots/update-filebeat-config.JPG)
+ 
+ 
 ----
 
+#### For METRICBEAT:
+
+1. Download Metricbeat playbook using this command:
+
+```curl -L -O https://gist.githubusercontent.com/slape/58541585cc1886d2e26cd8be557ce04c/raw/0ce2c7e744c54513616966affb5e9d96f5e12f73/metricbeat > /etc/ansible/files/metricbeat-config.yml```
+
+2. Copy the /etc/ansible/files/metricbeat file to /etc/metricbeat/metricbeat-playbook.yml
+3. Update the filebeat-playbook.yml file to include installer
+
+```curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.6.1-amd64.deb```
+
+4. Update the metricbeat file rename to metricbeat-config.yml
+
+
+----
 #### Answer the following questions to fill in the blanks:
 
 1. Which file is the playbook? Where do you copy it?
@@ -171,4 +193,26 @@ In order to use the playbook, you will need to have an Ansible control node alre
 - Test Kibana on web : http://[your.ELK-VM.External.IP]:5601/app/kibana
 - Test Kibana on localhost: sysadmin@10.1.0.4: curl localhost:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+****Other Linux Command List :
+
+**sudo apt-get update	  ;this will update all packages**
+
+**sudo apt install docker.io	 ;install docker application**
+
+**sudo service docker start  	;start the docker application**
+
+**systemctl status docker	  ;status of the docker application**
+
+**sudo docker pull cyberxsecurity/ansible	  ;download the docker file**
+
+**sudo docker run -ti cyberxsecurity/ansible bash	  ;run and create a docker image**
+
+**sudo docker start <image-name>	  ;starts the image specified**
+  
+**sudo docker ps -a	  ;list all active/inactive containers**
+  
+**sudo docker attach <image-name>  	;effectively sshing into the ansible**
+  
+**ssh-keygen	 ;create a ssh key**
+  
+**ansible -m ping all	   ;check the connection of ansible containers**
