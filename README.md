@@ -152,8 +152,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 2. Copy the **'/etc/ansible/files/filebeat-config.yml'** file to **'/etc/filebeat/filebeat-playbook.yml'**
 3. Update the **filebeat-playbook.yml** file to include installer by using the below:
 
-  - curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb 
-  - Update the **filebeat-config.yml** file root@c1e0a059c0b0:/etc/ansible/files# nano filebeat-config.yml
+```curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb Update the **filebeat-config.yml** file root@c1e0a059c0b0:/etc/ansible/files# nano filebeat-config.yml```
 
 ----
 
